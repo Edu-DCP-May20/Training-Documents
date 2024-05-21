@@ -1,0 +1,440 @@
+DCP - 20th May 2024 
+
+7AM-9AM IST - WeekDays!
+
+**********************
+Day 1 - 20th May 2024 
+**********************
+
+	Introduction to DevOps!
+	
+	What is DevOps ?
+	
+	Software Development ??
+	
+	Software Application ??
+	
+		- Destop Applications 		-->  Billing System 
+		
+		- Web Applications			-->  Web Service 
+		
+		- Mobile Applications		-->  Mobile Apps 
+		
+		- System Applications
+									--> Operating System 
+									--> Middleware products
+		
+		- Embedded Applications		--> Chip level programming!
+		
+	
+	
+	SDLC Process : Software Development Life Cycle!
+	
+		- Destop Applications 		-->  Billing System -- supermarket.
+		
+		- Billing system :
+			- Functions - stock maintainence 
+						- Payment
+						- Billing 
+						- User Interface Design 
+		
+			
+	- Requirement Analysis 
+	
+	- Design Document  
+	
+	- Coding/Development
+	
+	- Testing 
+	
+	- Implementation/Release 
+	
+	- Monitor/Maintain
+	
+	
+	Waterfall Model :
+			- Linear in fashion
+			- Follows top down-approach
+
+		- Billing system :						- 12 Months
+			- Functions/Modules - stock maintainence 
+						- Payment - cash
+								- card payment
+						- Billing 
+						- User Interface Design 
+
+		Core-Project :				
+			- Requirement Analysis	
+			- Design Document  	
+			- Coding/Development	
+			- Testing 	
+			- Implementation/Release
+			- Monitor/Maintain		
+
+		Enhancement-Project :				
+			- Requirement Analysis	
+			- Design Document  	
+			- Coding/Development	
+			- Testing 	
+			- Implementation/Release
+			- Monitor/Maintain				
+			
+	AGILE Methodologies ::
+				Functions/Modules/Iteration 
+
+			- Functions - stock maintainence 
+						- Payment
+						- Billing 
+						- User Interface Design 
+
+						- New feature1
+
+
+		Iteration1 :		stock maintainence				Developer1		
+			- Requirement Analysis	
+			- Diign Document  	
+			- Coding/Development	
+			- Testing 	
+			- Promote for further testing & Implementation
+
+		Iteration2 :		Payment							Developer2		
+			- Requirement Analysis	
+			- Design Document  	
+			- Coding/Development	
+			- Testing 	
+			- Promote for further testing & Implementation
+			
+		Iteration-nth :		New Feature	
+			- Requirement Analysis	
+			- Design Document  	
+			- Coding/Development	
+			- Testing 	
+			- Promote for further testing & Implementation
+			
+			
+		- Using AGILE Methodologies, we can achieve :
+		
+			- Continuous Development
+			- Continuous Integration
+			- Continuous Testing
+			- Continuous Delivery
+					# It is a approach to release the products to production Environment.
+					# This approach expects manual Approvals/intervension for production release
+					# Might leads to some downtime
+			
+			We cannot achieve 
+			
+			- Continuous Deployment
+					# It is a approach to release the products to production Environment.
+					# This approach will never expects manual Approvals for production release
+					# Here, without any downtime we can make the production deployments
+					
+					
+					
+		Write a program:
+		
+			Calculator Application:
+
+				functions - sum/sub/div/mul
+				
+				
+	DevOps :
+	
+		- DevOps is a software development strategy, it helps promote the collaboration between the Teams like Development Team and Operations Team to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automation fashion.
+		
+	How to Implement DevOps ????
+	
+		1. Teams involved in SDLC ?
+
+			DevOps Team :			
+				- Infra-Structure Management Team 
+													20 Developers 
+														- Workstation 
+														- Development Tools
+														- security patch updates 						
+				- Application Development Team 
+				- Testing Team 
+				- Release Management Team 
+				- Production Support Team 
+				- Production Monitoring Team 
+				- Security Team
+				
+			Role of DevOps Team is not to replace anyone, but we are here to help them to automate their process in order to speed up their deliverables and improve the productivity.
+		
+		2. Environments :
+		
+			Non-Prod Environments 											Production Environment
+			
+				Dev Environment
+				Build Environment
+				Test Environment
+					QA(Quality Assurance) Testing 
+					UAT(User Acceptance Testing) Testing 	=====>				Prod Servers
+		
+		3. DevOps Stages:
+		
+			- Continuous Development:
+				- It is a capability of Application Team to continuous to develop the codes and ensure developer productivity.
+				
+					Role of Developer :
+					
+						Coding & App Development 
+						
+						Create Source Code	--> java 
+						Build the Code		
+							--> Process of compiling the source code and create artifacts(Binaries - *.war/*.jar/*.exec/*.dll) 
+						Unit Testing 	
+						Promote the Changes to Higher Environment(Testing)
+						Notify the Testing Team thru Emails
+						
+					Using DevOps Approach :
+					
+						Create Source Code	
+						Save the Source Code in a Source Code Repository(github)
+					
+						Using DevOps Tools : 
+						
+						Automate :
+							Build the Code		
+								--> Process of compiling the source code and create artifacts(Binaries - *.war/*.jar/*.exec/*.dll) 
+							Unit Testing 	
+							Promote the Changes to Higher Environment(Testing)
+							Notify the Testing Team thru Emails									
+							
+					DevOps Tools ::
+					
+						Eclipse Based IDE - Integrated Development Environment, Visual Studio Code, Visual Studio, Pycharm...
+						
+						Build Tools - Maven 
+						Unit Testing Tools - Junit 
+				
+			
+			- Continuous Integration
+				- It is a capability of Application Team to continuously integrate their changes to further testing without impacting others' changes.
+
+						Automate :
+							Build the Code		
+								--> Process of compiling the source code and create artifacts(Binaries - *.war/*.jar/*.exec/*.dll) 
+							Unit Testing 	
+							Promote the Changes to Higher Environment(Testing)
+							Notify the Testing Team thru Emails	
+				- Tools :
+				
+					IDE, Maven, Junit, Docker, Ansible, Jenkins - CI Pipeline
+				
+			
+			- Continuous Testing
+				- Testing Team can using the artifacts to perform application testing - Test Automation
+				
+				- Tools :
+				
+					- Jenkins, Junit, TestNG, Selenium
+			
+			- Continuous Delivery / Deployment 
+				- Both are used to perform Production Release.
+
+				- Continuous Delivery
+						# It is a approach to release the products to production Environment.
+						# This approach expects manual Approvals/intervension for production release
+						# Might leads to some downtime
+				
+				- Continuous Deployment
+						# It is a approach to release the products to production Environment.
+						# This approach will never expects manual Approvals for production release
+						# Here, without any downtime we can make the production deployments
+						
+				- Tools :
+				
+					Jenkins, Ansible, Docker, Kubernetes,
+			
+			- Continuous Monitoring :
+				
+				- This to Monitor the Target Environments:
+				
+					- Infra-Structure Monitoring 
+					
+						Tools : Prometheus/Grafana/Dynatrace/Splunk
+						
+						CPU/Memory utilization
+						
+					- Application Monitor 
+					
+						Tools : App Dynamics/ Datadog
+						
+			
+			- Infra-Structure Management Team
+					
+					- Responsible for Provisioning and Configuring the Infra-Structure.
+					
+					Create the servers 			- Terraform 
+					
+					Configure the Servers		- Ansible
+				
+				
+Next :
+
+	DevOps LifeCycle 
+	
+	Version Control System using GIT
+		
+				
+**********************
+Day 2 - 21st May 2024 
+**********************	
+			
+		DevOps LifeCycle !
+		
+		DevOps Stages !
+		
+		
+		Environments ::
+		
+			Non-Prod Environments 																		Production Environment
+			
+				Dev Environment
+				Build Environment
+				Test Environment
+					QA(Quality Assurance) Testing 
+					UAT(User Acceptance Testing) Testing 	=====>	   pre-prod/Staging		=====>			Prod Servers
+		
+		
+		
+		Types of Application Architecture ::
+		
+			Continuous Developement :::
+			
+				Monolith Application Architecture :
+					- These are tightly coupled Applications
+					- All its dependencies are tightly coupled, which cannot be splited easily for continuous deployments.				
+			
+				Micro-Service Based Application Architecture
+					- These are loosly coupled application
+					- Each and every function of this application is considered as Micro-service.
+					- This allow to independly create and deploy to prod without any manual intervension.
+					- This help to achieve Continuous Deployments.
+
+				- Continuous Delivery
+						# It is a approach to release the products to production Environment.
+						# This approach expects manual Approvals/intervension for production release
+						# Might leads to some downtime
+
+				Eg.: 
+					Online Banking Core - Services
+					
+						bug fix / new feature --> production release.
+						Downtime --> Production Release Window -- > 4 - 6 hrs
+						
+						Manual Approvals from all stake holders
+							banking_app_V1.0 --> LIVE
+							banking_app_V2.0
+							
+								- Fix the issue within rel. window 
+								- Revert 
+								
+				- Continuous Deployment
+						# It is a approach to release the products to production Environment.
+						# This approach will never expects manual Approvals for production release
+						# Here, without any downtime we can make the production deployments
+					
+				Eg.:
+					Facebook/amazon.com/netflix
+					
+				amazon :::
+				
+				sign-up	- F/B/A - 3 - tier application - developer1 -> code,unit test,promote to qa/uat,deployed to prod
+				sign-in - F/B/A - 3 - tier application - developer2 -> code,unit test,promote to qa/uat,deployed to prod
+				search  - F/B/A - 3 - tier application - developer3 -> code,unit test,promote to qa/uat,deployed to prod
+				add to cart 
+				place order 
+				payment 
+				confirm order 
+				track
+		
+		DevOps LifeCycle ::
+		
+		
+		Source Code 
+		
+		Commit the Source to Source_Code repository(github/gitlab/az repo)
+		
+		CI/CD Pipeline -- Created using DevOps Tools like Jenkins /gitlab-ci/az-pipeline/aws code pipeline/bamboo
+
+			SCM_Checkout 
+			Application Build 
+			Perform Unit Test  --> 25 test cases -- 100%  - 80%
+			Code Quality Analysis
+			Promote the Changes to QA 
+			Perform QA Testing 
+			Promote the Changes to UAT 
+			Perform UAT Testing 		
+			Promote the Changes to PROD 
+			Perform PROD Testing 	
+			Monitor the Infra-Structure and Applications running in PROD Environment 
+			
+			
+			Shift Left Approach ->
+		
+		
+		- DevOps is a software development strategy, it helps promote the collaboration between the Teams like Development Team and Operations Team to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automation fashion.
+
+		DevOps : People/Process/Tools 
+		
+		
+		DevOps Tools :
+		
+		Open-Source DevOps Tools :
+		
+			git/jenkins/Docker/Ansible/Kubernetes/Terraform/Prometheus/Grafana
+			
+		
+		Managed Services :
+		
+			AWS 	AWS Code Commit/ code Pipeline / Code Build / Code Deploy 
+			Azure 	Azure DevOps Services - Azure Repo / Az Pipeline / Az Test / Az Artifacts 
+			GCP 
+			
+			
+		Detailed DevOps Assessment
+			- Identify the scope for automation
+			- 270+
+			
+		waterfall, Agile, DevOps, DevSecOps, gitOps, AIOps, SRE, MLOps,....
+
+		DevOps Asso. --> Sr. DevOps Asso.
+		DEngg --> Sr. DEngg.
+		DLead --> Sr. DLead 
+		
+		DA - Sr. DA
+		DevOps Consultant 
+		
+	How to do?
+	
+		git/jenkins/Docker/Ansible/Kubernetes/Terraform/Prometheus/Grafana
+
+	Programming Language
+	
+	Scripting Language :
+		shell/groovy/yaml/Python
+	
+
+**********************
+Day 2 - 21st May 2024 
+**********************		
+
+	Version Control System Using GIT :: 
+	Source Code Repository(github)
+	
+	Github -- Open-Source Remote Source_Code Management Tool.
+	
+	Repository : 
+		- Collection of Folders & Files
+		
+		www.github.com
+		
+	github 
+	az Repo
+	bitbucket 
+	aws code commit
+	gitlab 
+	
+		
