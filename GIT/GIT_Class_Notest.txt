@@ -1,0 +1,19 @@
+**********************
+Day 2 - 21st May 2024 
+**********************		
+
+	Version Control System Using GIT :: 
+	Source Code Repository(github)
+	
+	Github -- Open-Source Remote Source_Code Management Tool.
+	
+	Repository : 
+		- Collection of Folders & Files
+		
+		www.github.com
+		
+	github 
+	az Repo
+	bitbucket 
+	aws code commit
+	gitlab 
