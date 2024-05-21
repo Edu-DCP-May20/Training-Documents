@@ -17,3 +17,100 @@ Day 2 - 21st May 2024
 	bitbucket 
 	aws code commit
 	gitlab 
+	
+	
+	Repository 
+	
+	Version Control System using GIT ::::
+		
+		
+	Version Control System ::
+	
+		- It is used to version control the source code.
+		- It is used to track the source code changes.
+		
+	Developer :
+		- mywebapp.html 
+		
+			<html>
+			func1
+			---
+			---
+			--
+			-
+			-
+			--
+			--
+			</html>
+			
+			save as mywebapp.html
+			
+			unit testing 
+			
+			
+			<html>
+			func1
+			---
+			---
+			--
+			asdfasdfasdf
+			-
+			--
+			--
+			dsfgsdfg
+			sdf
+			gwfsdfdf
+			func2
+			adfasdfasdfasdf
+			achievesdfasdf
+			</html>
+			
+			save as mywebapp.html
+			
+			unit testing 
+			
+			
+			Version Control System 
+			
+				save as mywebapp.html_v1.0
+				
+				save as mywebapp.html_v1.1
+				
+				save as mywebapp.html_v1.2
+				
+				save as mywebapp.html_v1.3
+				
+	
+	Type of Version Control System :
+	
+		- Local Version Control System 
+		
+		- Centralized Version Control System
+		
+		- Distributed Version Control System
+		
+		
+		
+	
+	GIT --
+	
+		- Is a Open-Source Distrubuted Version Control System 
+		
+		- Used to Version control the Changes 
+		
+		- Used to Track the Changes 
+		
+		- Used to perform Parallel Development using Branching Techniques
+		
+		
+	git :
+	
+		GIT is CLI - Command Line Utility/Interface installed in Local Machine used to maintain Local git repositories.
+	
+	github - Remote Server used to maintain the remote git repositories
+	
+	
+Next: 
+		Work with GIT 
+
+	- Install GIT CLI 
