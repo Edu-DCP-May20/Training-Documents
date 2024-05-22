@@ -114,3 +114,295 @@ Next:
 		Work with GIT 
 
 	- Install GIT CLI 
+
+
+
+				
+**********************
+Day 3 - 22nd May 2024 
+**********************	
+
+	Working with GIT!
+
+	GIT --	
+		- Is a Open-Source Distrubuted Version Control System 	
+	
+	GIT File Workflow ::: 60% 
+	
+	Local Machine 																				Remote Server
+	
+	Install git cli
+	
+	Create git Repositories and Manage the Source Code Versions
+	
+	Local Machine 																				 			Remote Server
+	
+	Working Directory 				Staging Area					 GIT Local Repository					Remote Repository
+	
+	mywebapp.html    ----------->	mywebapp.html	-------------->	 mywebapp.html_v1.0		----------->	mywebapp.html_v1.0
+					  git add                        git commit                              git push 
+	
+	mywebapp.html    ----------->	mywebapp.html	-------------->	 mywebapp.html_v2.0		----------->	mywebapp.html_v2.0
+					  git add                        git commit                              git push 
+	
+	mywebapp.html    ----------->	mywebapp.html	-------------->	 mywebapp.html_v3.0		----------->	mywebapp.html_v3.0
+					  git add                        git commit                              git push 
+	
+			Version Control System 
+			
+				save as mywebapp.html_v1.0		===> Version Number / Tag / Commit ID	==> jdk 1.8 - jdk 11 - jdk 17
+				
+				save as mywebapp.html_v1.1
+				
+				save as mywebapp.html_v1.2
+				
+				save as mywebapp.html_v1.3	
+
+
+		- mywebapp.html 
+		
+			<html>
+			func1
+			---
+			---
+			--
+			-
+			-
+			--
+			--
+			</html>
+
+
+	Developer Workload :::
+	
+		Enhancement / Bugfix Project 
+		
+		New Project 
+
+	GIT Command :::
+	
+	Local Machine 																				 			Remote Server
+	
+	Working Directory 				Staging Area					 GIT Local Repository					Remote Repository
+
+		git clone 		===> 	Used to copy/clone the entire remote repository to Local Machine 
+		
+		git add 		===> 	Used to add the changes from working directory to staging area
+		
+		git commit 		===> 	Used to commit the changes from staging area to local repository
+		
+		git push		===> 	Used to Push the changes from local repository to remote repository
+		
+		git fetch/pull :
+				
+				Both git fetch and git pull commands are used to handle the incremental changes from remote repository
+				
+				git fetch 
+					- It is just used to check for any incremental changes in the remote repository. If any incremental changes exist, that will be updated only in the local repository and NOT in the working directory.
+					- If you want to bring those changes to working directory, either we can use merge/checkout/pull commands.
+				
+				git pull 
+					- It is used to check for any incremental changes in the remote repository. If any incremental changes exist, that will be updated in the working directory as well as in the local repository.
+					
+					git pull = git fetch + git merge 	
+
+					git pull will keep your local repository in-sync with remote repository
+					
+		
+		fork 			===>	Used to copy a remote repository to another remote repository		
+		
+		git init 		===> 	Used to initialize a local repository
+		
+		
+	Working with Local GIT Repositories :::
+	
+	Install git client :			https://git-scm.com/downloads
+	
+		On Windows OS :
+					- GIT BASH 
+					- GIT CMD 
+					- GIT GUI
+		
+		
+	Maintain Project Folder Structure:
+	
+		cd d:
+		mkdir DCP-May20-Projects
+		cd DCP-May20-Projects
+		mkdir repo1
+		mkdir repo2
+		mkdir repo3
+		cd repo1
+
+	
+		git init 		===> 	Used to initialize a local repository
+								It will create a GIT DIR! 	# Used by git to maintain the repo details
+								It will create a default branch called 'master'
+		
+		Local Machine 																				
+		
+		Working Directory 				Staging Area					 GIT Local Repository		
+		
+		file1.txt			----->		file1.txt 		----->				
+		
+		
+		git status 		===> Used to get the current status of the repository
+		
+		git log 		===> Used to get the list commits
+		
+		git init 
+		
+		create some files 
+		
+		git add <files>
+		
+		git config :::
+		
+			Global Configuration 		# It is applicable for all the repositories in local machine
+			
+				git config --global user.name "Loksai"
+				git config --global user.email "Loksai@asdf.com"
+				
+				git config --list
+				
+			
+			Local Configuration			# It is applicable for a specific the repository in local machine
+			
+				git config user.name "Loksai"
+				git config user.email "Loksai@asdf.com"				
+			
+		
+		git commit -m "<Commit_Message>"
+		
+		GIT ADD Command:
+		
+			git add <file_name>
+			
+			git add <file1_name> <file2_name>
+			
+			git add *.txt *.java
+			
+			git add .
+		
+
+		GIT LOG :
+		
+		git log
+		git log --oneline
+		git log -2
+		git log --oneline -2
+		git log --stat -2	
+		
+		git show  <commit_id>
+
+  501  cd d:
+  502  mkdir DCP-May20-Projects
+  503  cd DCP-May20-Projects/
+  504  ls
+  505  mdkir repo1
+  506  cd repo1
+  507  mkdir repo1
+  508  cd repo1
+  509  cd ..
+  510  mkdir repo2
+  511  cd repo2
+  512  cd ..
+  513  ls
+  514  clear
+  515  cd repo1
+  516  ls
+  517  ls -a
+  518  git init
+  519  ls
+  520  ls -a
+  521  cd .git/
+  522  ls
+  523  cd ..
+  524  clear
+  525  ls
+  526  echo "Hello"
+  527  echo "record1" >> file1.txt
+  528  ls
+  529  cat file1.txt
+  530  git status
+  531  git add file1.txt
+  532  git status
+  533  git commit -m "Created file1.txt"
+  534  git log
+  535  cd ..
+  536  ls
+  537  cd repo2
+  538  ls
+  539  ls -a
+  540  git init
+  541  ls -a
+  542  echo "record1" >> file1.txt
+  543  git status
+  544  git add file1.txt
+  545  git status
+  546  git commit -m "Created File1.txt"
+  547  git status
+  548  git log
+  549  echo "record1" >> file2.txt
+  550  git add file2.txt
+  551  git commit -m "Created file2.txt"
+  552  git log
+  553  ls
+  554  cd ..
+  555  cd repo1
+  556  git log
+  557  git config --global user.name "Loksai"
+  558  git config --global user.email "Loksai@asdfasdf.com"
+  559  echo "rec1" >> f2.txt
+  560  git add f2.txt
+  561  git commit -m "created f2.txt"
+  562  git log
+  563  git config list
+  564  git config --list
+  565  clear
+  566  git status
+  567  ls
+  568  git log
+  569  clear
+  570  echo "rec1" >> s1.txt
+  571  git status
+  572  echo "rec1" >> s2.txt
+  573  echo "rec1" >> s3.txt
+  574  echo "rec1" >> a1.java
+  575  echo "rec1" >> a2.java
+  576  echo "rec1" >> a3.java
+  577  echo "rec1" >> q1.doc
+  578  echo "rec1" >> q1.md
+  579  echo "rec1" >> q2.md
+  580  git status
+  581  git add a1.java a2.java
+  582  git status
+  583  git add *.md
+  584  git status
+  585  git add .
+  586  git status
+  587  git commit -m "Created few files"
+  588  git log
+  589  git log --oneline
+  590  git log -2
+  591  git log --oneline
+  592  git log --oneline -2
+  593  git log --oneline -1
+  594  git log -1
+  595  git log --stat -1
+  596  git log -1
+  597  git log --stat -2
+  598  git log --oneline
+  599  git show 905d023
+  600  history
+		
+Next : 
+	 GIT Misc Command 
+	 
+	 GIT branches 
+					
+					
+	GIT Misc. Commands 
+	
+	GIT Branching Techniques
+
