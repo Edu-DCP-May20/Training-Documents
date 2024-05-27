@@ -1437,3 +1437,148 @@ Next :
 	pull /fetch 
 	push 	
 	remote 
+
+
+		
+**********************
+Day 6 - 27th May 2024 
+**********************		
+
+	Clone 
+	pull /fetch 
+	push 
+	
+	remote 
+
+
+			
+			git clone https://github.com/Edu-DCP-May20/MyTestRemoteRepo1.git
+			git status
+			
+			create branch 
+			
+			add 
+			
+			commit 
+		
+			push changes back to remote repo
+			
+			git Authentication :::
+			
+				git Credentials :
+				
+					- github user Id 		
+					
+					- gihub access token		
+					
+				Create github access  token
+				
+				
+			git push -u origin local-feature1
+			
+			
+			git fetch 
+			
+			git pull 
+		
+		git fetch/pull :
+				
+				Both git fetch and git pull commands are used to handle the incremental changes from remote repository
+				
+				git fetch 
+					- It is just used to check for any incremental changes in the remote repository. If any incremental changes exist, that will be updated only in the local repository and NOT in the working directory.
+					- If you want to bring those changes to working directory, either we can use merge/checkout/pull commands.
+				
+				git pull 
+					- It is used to check for any incremental changes in the remote repository. If any incremental changes exist, that will be updated in the working directory as well as in the local repository.
+					
+					git pull = git fetch + git merge 	
+
+					git pull will keep your local repository in-sync with remote repository
+							
+		
+		
+			git remote -v   			# Used to list the remote repositories link to the local repository
+			
+			git remote remove origin 	# disconnect/remove the remote repo from local repos
+
+			git remote add origin 		# connect the remote repo to local repos
+	
+		
+			New Project 	:::
+			
+				  852  git init
+				  853  echo "rec1" >> l1.txt
+				  854  git add .
+				  855  git commit -m "created l1.txt"
+				  856  git remote -v
+				  857  git branch -M main
+				  858  git branch -M master
+				  859  git remote add origin https://github.com/Edu-DCP-May20/mytestrepo1.git
+				  860  git remote -v
+				  861  git push -u origin master
+
+
+  803  cd DCP-May20-Projects/
+  804  ls
+  805  clear
+  806  ls
+  807  mkdir remoterepos
+  808  cd remoterepos/
+  809  clear
+  810  git clone https://github.com/Edu-DCP-May20/MyTestRemoteRepo1.git
+  811  ls
+  812  cd MyTestRemoteRepo1/
+  813  ls
+  814  ls -a
+  815  clear
+  816  git status
+  817  git remote -v
+  818  git branch
+  819  git log --oneline
+  820  git log --oneline
+  821  git switch -c local-feature1
+  822  git log --oneline
+  823  echo "rec1" >> localfile1.txt
+  824  git add .
+  825  git commit -m "Created local file1.txt"
+  826  git log --oneline
+  827  git push -u origin local-feature1
+  828  git switch main
+  829  git status
+  830  git log --oneline
+  831  ls
+  832  git fetch
+  833  git status
+  834  ls
+  835  git pull
+  836  ls
+  837  git status
+  838  git log --oneline
+  839  git pull
+  840  git remote -v
+  841  git remote remove origin
+  842  git remote -v
+  843  git status
+  844  git remote add origin https://github.com/Edu-DCP-May20/MyTestRemoteRepo1.git
+  845  git remote -v
+  846  git status
+  847  git remote -v
+  848  cd ..
+  849  mkdir testremoterepo1
+  850  cd testremoterepo1/
+  851  clear
+  852  git init
+  853  echo "rec1" >> l1.txt
+  854  git add .
+  855  git commit -m "created l1.txt"
+  856  git remote -v
+  857  git branch -M main
+  858  git branch -M master
+  859  git remote add origin https://github.com/Edu-DCP-May20/mytestrepo1.git
+  860  git remote -v
+  861  git push -u origin master
+  862  history
+
+
+
