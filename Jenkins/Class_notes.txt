@@ -1,0 +1,136 @@
+**********************
+Day 6 - 27th May 2024 
+**********************	
+
+	Build Orchestration using Jenkins ::::
+	
+		Lab Requirements:
+		
+			AWS Cloud platform ::
+
+				Create a AWS Free-tier Account
+						https://aws.amazon.com/console/
+				
+				12 Months 
+				
+				Active Email_ID 
+				Mobile Number 
+				Active Credit/Debit Card for authentication - International Transaction 
+				
+				clear brower history/cache & create another account
+				
+				Login to aws console as a root user
+					- Email_id 
+					- Password
+					
+				Create EC2 Instances / VMs 
+				
+				Establish Connection to VMs / EC2 Instances 
+				
+					AWS Instance Connect 
+					
+					SSH Clients 
+						- MobaXterm 		https://mobaxterm.mobatek.net/download.html
+						- Putty 
+						
+					Terminal 
+					
+	Jenkins :::
+	
+		- Jenkins is Open-Source Build Orchestration Tool 
+	
+	
+		- Jenkins Architecture
+			- Master / Slave Architecture :::
+			
+				Virtual Machine --> Install Jenkins --> 
+									Used to Create CICD Pipeline Project and Scheduled to run in slave nodes
+									
+									
+				Jenkins_Master_Node		--> Install Jenkins  
+				
+					Jenkins_Slave_Node	--> Perform Application Builds
+					
+				Eg.: 
+				
+					Jenkins_Master_Node	--> Installed Jenkins 
+											Java Application 	- Build tool (maven)
+
+
+					Jenkins_Master_Node	--> Installed Jenkins 
+											Used to Create CICD Pipeline Jobs/Projects and Scheduled to run in slave nodes					
+						Jenkins_Slave_Node1 	Java Application 	- Build tool (maven)
+						Jenkins_Slave_Node1.1 	Java Application 	- Build tool (maven)
+						Jenkins_Slave_Node2 	Python
+						Jenkins_Slave_Node3 	NodeJS
+						Jenkins_Slave_Node4 	NodeJS
+						Jenkins_Slave_Node5 	.Net
+						
+		Alternative to Jenkins ===> Azure Pipelines / git-lab-ci / aws codepipeline / bamboo
+
+
+		What are the roles and responsibilities of DevOps Engineer :
+		
+		
+		Developers' Perspective :::
+		
+				--> Consumers 
+		
+		DevOps Perspective :::
+		
+			- Jenkins Administration 
+			
+				- Installation of Jenkins 
+				- Manage the Jenkins Plugins 
+				- Tools Management 
+				- User Management
+				- Security Management 
+				- Global Jenkins System Management
+				- Create CICD Pipeline Projects 
+				- Create and Manage the Jenkins Slave Nodes 
+				- Onboard applications to DevOps Jenkins CICD process 
+				- Trouble-shoot the Issue
+				- Periodic Back-up and Recovery of Jenkins Components 
+				- Periodic Upgrade of Jenkins & its Plugins 
+				
+		- Installation of Jenkins
+				https://www.jenkins.io/doc/book/installing/
+		
+			VM on AWS Cloud 
+			
+			1. Launch Linux Ubuntu Machine - AWS EC2 Instance 
+			
+					- Choose Linux Ubuntu v22.04 ami
+			2. Install Jenkins 
+				
+			Package Managers :
+
+				Used to manage the packages on Linus Machines :
+				
+					Linux Distribution:
+					
+						- Centos/RHEL			-- yum 
+						- Ubuntu/Debian			-- apt-get / apt 
+						- Fedora				-- dnf 
+			
+			Jenkins can be accessible as a web service --> 
+				- It uses port 8080 as a default port for access.
+				
+				run a  vm for 750 Hrs/Month 
+				
+				1 VM 	= 750 Hrs/Month 
+				10 VMs 	= 75 Hrs/Month
+				
+				
+
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+		
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins	
