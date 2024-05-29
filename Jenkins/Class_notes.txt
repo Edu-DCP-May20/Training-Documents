@@ -415,3 +415,134 @@ pipeline {
 Next :: 
 
 	Create CICD pipeline with actual application
+
+		
+**********************
+Day 8 - 29th May 2024 
+**********************	
+
+
+	Create CICD pipeline to automate build and deployment
+	
+	Application and Builds Tool :
+	
+		- Java Web application using Maven Build Tool 
+		
+		
+		Build Environment :
+		
+		Target Environment : QA/UAT/Prod
+		
+		Jenkins_Master_Node 									# Used to Orchestrate the Builds and Deployments
+			Jenkins_Slave_Node 									# Build Environment  -- *.war 
+		
+		Target/Hosted Server(VM) 
+			- Web Application Server (Tomcat)
+			
+			
+			How to Connect with Remote Server :
+			
+				- Host Name / IP Address 
+				- Uname 
+				- Credentials
+					
+		In Java Maven Project Source :
+		
+			- Maven is one of the open-source build tool for java applications
+				(gradle/ant)
+				
+			- pom.xml :
+				- Used to maintain the dependencies and the plugins required to build the maven application
+		
+			- Maven Goals :
+			
+				- Compile 		# Just to compile the src_code 
+				- Test 			# Compile and Perform Unit Testing 
+				- Package 		# Compile, Unit Test and Create artifacts in target folder of source code repo
+				- Clean 		# Used to Clean the Target folder 				
+			
+				Syntax:
+				
+					mvn clean package 
+					
+		Prepare Build Environment and Target Environment
+		
+		
+Setup Jenkins Slave Node 	::
+
+
+pipeline {
+
+    agent { label 'slave1' }
+
+    stages {
+        stage('SCM_Checkout ') {
+            steps {
+                echo 'Perform SCM Checkout'
+            }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build'
+            }
+        }
+        stage('Deploy to QA Environment') {
+            steps {
+                echo 'Deploy to QA Environment'
+            }
+        }
+    }
+}
+		
+Summary :
+
+	- Launch EC2 Instance - ubuntu v22.04
+			
+	- Install git,jdk,maven 
+	
+	- Create User Name 
+	
+	- Create SSH Key
+	
+	- Login to Jenkins 
+	
+	- goto node config page 
+	
+	- Create New Node 
+	
+	- Create a pipeline job using pipeline snippet generator
+				
+pipeline {
+
+    agent { label 'slave1' }
+
+    stages {
+        stage('SCM_Checkout ') {
+            steps {
+                echo 'Perform SCM Checkout'
+                git 'https://github.com/Edu-DCP-May20/springbootapp1.git'
+            }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build'
+                sh 'mvn clean package'
+            }
+        }
+        stage('Deploy to QA Environment') {
+            steps {
+                echo 'Deploy to QA Environment'
+            }
+        }
+    }
+}
+
+Next :::
+		Configure :
+			Tomcat Server 
+			create CI/CD Pipeline			
+			Build Trigggers 			
+			Email Notifications 
+			
+		Ansible 
+	
