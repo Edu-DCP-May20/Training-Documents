@@ -597,3 +597,180 @@ Next :::
 			
 		Ansible 
 	
+**********************
+Day 9 - 30th May 2024 
+**********************	
+
+	Configure :
+		Tomcat Server 
+		create CI/CD Pipeline			
+		Build Trigggers 			
+		Email Notifications 
+		
+	
+		About Deployment :::
+		
+		
+		Jenkins_Master_Node
+			- Jenkins_Slave_Node1
+		
+		Tomcat_Server 					# Port 8080
+			
+			About Deployment :::	
+
+			Source Server 															Target Server
+			
+				Jenkins_Slave_Node														Tomcat_Server
+					target/demo-0.0.1-SNAPSHOT.war 				===========>				/opt/tomcat/webapps/demo*.war
+					
+					
+		Publish over SSH Plugins 
+		
+			- Used to connect to remote server thru ssh and copy the artifacts
+					
+					
+			got0 - Manage jenkins - system configuration - publish over ssh config
+			
+			
+			
+		sshPublisher(publishers: [sshPublisherDesc(configName: 'Tomcat-Server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+					
+					
+					
+		Artifactory Libraries  - Jfrog Artifactory 
+				- Used to version control the artifacts 
+				
+				
+		GITHUB 					--> Used to version control src_code 
+		
+		Jfrog Artifactory  		--> Used to version control the artifacts 
+		
+		Container Registries 	-->	Used to version control the Application Container Images 
+			
+			
+			
+
+	Build Trigggers  ::::
+	
+		- Used automate / schedule the builds 
+		
+	
+		Types of Build Triggers :::
+		
+		
+		- Build Periodic
+			- Used to schedule the job based on cron tab 
+			
+			Eg.: 
+			
+				Jenkins Master
+				
+				Non-Environments				Prod Servers 
+					
+					dev
+					Slave Nodes1 					
+					QA 	Test 					
+					UAT Test 	
+		
+				8AM 		Jenkins Non-Prod_Server_Start_Job		* 8 0 0 0
+				
+				10PM 		Jenkins Non-Prod_Server_Stop_Job		* 22 0 0 0
+			
+		
+		- Github webhook :::
+		
+			- Used to trigger the cicd pipeline job as soon as commit happened in the remote source code repository
+			
+			- So for every commit the jobs gets triggered to perform CI and CD.
+			
+			Configure github Webhook :
+		
+		
+		<jenkins_public_ip_addr>:8080/github-webhook/
+		
+		http://65.1.85.232:8080/github-webhook/
+		
+		
+		- poll SCM :::
+			
+			- Used to trigger the cicd pipeline job as per the given cron schedule only if there is any changes committed in the remote source code repository
+			
+			execute for every 1 min 
+			
+			Test Cycle :
+			
+				8AM 	12PM	3PM
+				
+				
+	Email Notifications :::	
+			
+pipeline {
+
+    agent { label 'slave1' }
+
+    stages {
+        stage('SCM_Checkout ') {
+            steps {
+                echo 'Perform SCM Checkout'
+                git 'https://github.com/Edu-DCP-May20/springbootapp1.git'
+            }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build'
+                sh 'mvn clean package'
+            }
+        }
+        stage('Deploy to QA Environment') {
+            steps {
+                echo 'Deploy to QA Environment'
+            }
+        }
+    }
+}		
+			
+			
+			
+	Notifications can be done based on the execution of Job / Job Steps
+	
+		- success 
+		
+		- failure 
+		
+		- unstable 
+		
+	- Configure Email Server in Jenkins Management Console 
+
+
+EMail Notification :::
+
+
+SMTP Server :
+smtp.gmail.com
+
+SMTP Authentication
+
+SMTP Port :: 465
+
+Login to Gmail :::
+
+Click Manage Account Settings
+
+@Left side panel - select Security 
+
+MFA --> mobile# # Two way authentication.
+
+on the same page search for app password
+
+enter the app password name 
+App Password = 16 bytes of App Password. 
+
+What ? window
+Which Appln - email
+	
+	- Add the Email Notifications in the post build actions of pipeline job/stage
+			
+Next ::: 
+
+	Ansible 
+	
