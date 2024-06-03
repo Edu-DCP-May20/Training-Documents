@@ -79,3 +79,39 @@ Day 10 - 31st May 2024
 		
 			- Are used to Organize the Ansible Components (task,variables,handlers,global-files)
 			
+
+**********************
+Day 11 - 3rd May 2024 
+**********************				
+
+	
+
+
+		Playbook :
+		
+			- Playbook structure		*.yaml 
+			
+			- Use the required Modules  # Tasks 
+			
+			
+		Variables :::
+		
+			- Enhancement Variables 			# based on setup - ansible facts
+			
+			- User Defined Variables
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
