@@ -101,6 +101,54 @@ Day 11 - 3rd May 2024
 			- User Defined Variables
 			
 				
+**********************
+Day 12 - 4th May 2024 
+**********************				
+
+	
+	Variables :::
+
+	Ansible roles / loop / Handlers Demo 
+
+	
+	working with Ansible Modules 
+
+	
+	Inventory File 
+	
+	Playbooks 
+	
+		- Collection of Tasks
+		- Will be invoked in sequence without any intruption
+		
+	Handlers
+	
+		- Collection of Tasks 
+		- Tasks in handlers will be invoked only if it is notified.
+	
+	Ansible Roles 
+
+
+	Pipeline : 
+	
+		Stage1 : Create a tomcat server (Terraform)
+
+		Stage2 : Install jdk, tomcat (Ansible) Inventory file  
+		
+		Stage3 : start tomcat
+
+
+
+	playbook.yaml
+
+	---
+		name: play1
+		host: 
+		task:
+		
+		name: play2
+
+			
 
 
 
