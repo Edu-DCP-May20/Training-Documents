@@ -298,7 +298,119 @@ l
 		
 			docker build -t <new_Container_Image_Name>:tag .  # execute this command from the current dir for Dockerfile.
 			
-	
+   13  apt install docker.io -y
+   14  docker --version
+   15  clear
+   16  docker images
+   17  docker ps
+   18  docker ps -a
+   19  docker pull centos
+   20  docker images
+   21  docker ps
+   22  docker ps -a
+   23  docker run centos
+   24  docker ps
+   25  docker ps -a
+   26  docker run centos sleep 20
+   27  clear
+   28  docker run centos sleep 20
+   29  asdf
+   30  clear
+   31  docker run -d centos sleep 20
+   32  docker ps
+   33  docker run -it centos bash
+   34  docker start 9560025c4acd
+   35  docker exec -it 9560025c4acd bash
+   36  docker stop 9560025c4acd
+   37  docker images
+   38  docker run alpine
+   39  docker ps -a
+   40  docker images
+   41  docker history alpine
+   42  docker history centos
+   43  docker inspect centos
+   44  docker images
+   45  docker ps -a
+   46  docker rm 5cccfa8e34d3
+   47  docker ps -a
+   48  docker run alpine
+   49  docker ps -a
+   50  docker run alpine
+   51  docker ps -a
+   52  docker rmi alpine
+   53  docker rm 2297f06052c6 c676d801231f
+   54  docker ps -a
+   55  docker rmi alpine
+   56  docker pull tomcat:8.0
+   57  docker images
+   58  docker run -it tomcat:8.0 bash
+   59  history
+
+   11  docker ps
+   12  docker ps -a
+   13  docker ps
+   14  docker ps -ps
+   15  docker ps -a
+   16  docker ps
+   17  docker ps -a
+   18  docker run -it -p 8085:8080 tomcat:8.0
+   19  history
+
+   11  docker ps
+   12  docker run -it -p 8080:8080 tomcat:8.0
+   13  history
+
+   11  docker ps
+   12  docker run -it -p 8085:8080 tomcat:8.0
+   13  docker ps -a
+   14  docker ps
+   15  docker stop 8ec396ba032f a74b8415ae69 c1fa90310084
+   16  clear
+   17  docker ps
+   18  docker volumr list
+   19  docker volume list
+   20  docker volume create jun5-vol1
+   21  docker volume list
+   22  docker volume inspect jun5-vol1
+   23  cd /var/lib/docker/volumes/
+   24  ls
+   25  cd jun5-vol1/
+   26  ls
+   27  cd _data/
+   28  pwd
+   29  ls
+   30  docker run -it centos bash
+   31  docker run -it --mount source=jun5-vol1 destination=/jun5-vol centos bash
+   32  docker run -it --mount source=jun5-vol1,destination=/jun5-vol centos bash
+   33  ls
+   34  echo "rec1" >> hostfile1.txt
+   35  ls
+   36  echo "rec1" >> hostfile2.txt
+   37  ls
+   38  docker run -it --mount source=jun5-vol1,destination=/jun5-vol centos bash
+   39  docker volume inspect jun5-vol1
+   40  history
+   41  cd ~
+   42  dockerimages
+   43  docker images
+   44  docker run -it debian
+   45  docker ps
+   46  docker ps -a
+   47  docker start 7512ee782a6f
+   48  docker exec -it 7512ee782a6f bash
+   49  docker ps -a
+   50  docker images
+   51  docker commit 7512ee782a6f myjavabuildimg
+   52  docker images
+   53  docker run -it myjavabuildimg bash
+   54  docker commit 7512ee782a6f loksaieta/myjavabuildimg1
+   55  docker images
+   56  docker login  -u loksaieta
+   57  docker login -u loksaieta
+   58  docker push loksaieta/myjavabuildimg1
+   59  history
+
+
 Next :
 
 	Docker Build 
