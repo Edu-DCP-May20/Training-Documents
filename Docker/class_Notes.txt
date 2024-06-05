@@ -157,5 +157,151 @@ Day 12 - 4th June 2024
 				
 				docker run 
 				
+
+***********************
+Day 13 - 5th June 2024 
+***********************	
+
+	Launch Linux Machine 	
+			- Build Environment will create application artifacts as well as Application Images.
+	
+		- Install Docker 
+		
+		- Use Docker Cli to interact with Docker Engine 
+		
+		- Misc. Docker CLI Commands
+		
+		- Working with existing images 
+		- Create Containers 
+		- Docker Port Mapping 
+		- Docker Volumes 
+		- Create new Images 
+		- Push the new images to Docker hub Registry
+		- Container Orchestration 
+			- Docker Compose 
+			- Docker Swarm 
+			- Kubernetes
+			
+
+		- Misc. Docker CLI Commands
+		
+		
+			docker images 					# List the Images in local machine 
+			
+			docker ps 						# List running containers in local machine
+			
+			docker ps -a 					# List all running and stopped containers in local machine
+			
+			docker pull centos				# Download latest version container image from container registry
+			
+			docker pull centos:centos7		# Download previous version container image from container registry using tag name
+l
+			docker run centos 				# Create/Run the Container 
+			
+			docker run centos sleep 20		# Create/Run the Container with run time command
+			
+			Container Execution/Run Modes :
+			
+				- Foreground/Attached Mode 				# Default
 				
+					docker run centos 
+			
+				- Background/Detached Mode
+				
+					docker run -d centos 
+					
+				- Interactive Mode 
+			
+					docker run -it <image_ID> bash 
+					
+					docker run -it centos bash 
+					exit
+					
+			docker start <container_id>					# Start the Container
+			
+			docker exec -it <contiainer_id> bash 		# Login to running container 
+			exit
+			
+			docker stop <container_id> 					# Stop the running Container
+			
+			docker history <image_name>					# Get the layers of Image
+		
+			docker inspect < >							# Get Complete details of any docker components like image/container/volume
+			
+			docker rmi	<image_id>
+			
+			docker rm <container_id>
+			
+			
+			Port Mapping/Binding :::
+			
+				Is used to expose the container applications to Internet 
+				
+				-p host_port:container_port
+				
+				docker run -it -p 8085:8080 tomcat:8.0
+				
+				
+			Docker Volume :::
+			
+			Containers --> Not a permanent Entity
+			
+			- Stateless Applications  	# will not have any trace of execution 
+			
+			- stateful Applications		# will leave some trace of execution - logs/report/artifacts
+			
+			Container Volume # Are used to maintain the Persistant Data through the flow of execution.
+
+			Using Container Volumes we can able to send input to Container as well as get output from container.
+			
+				3 - tier application Architecture ::
+				
+					Front-End Layer 			C1 	
+						
+					Application Layer 			C2 
+					
+					BackEnd(DBase) Layer		C3 
+			
+			
+  19  docker volume list
+   20  docker volume create jun5-vol1
+   21  docker volume list
+   22  docker volume inspect jun5-vol1
+   
+   docker run -it --mount source=jun5-vol1,destination=/jun5-vol centos bash
+   
+   
+	Create Container Image :::
+		
+		docker commit 		# Is used to create an Image using the existing container properties 
+		
+			docker commit <container_id> <new_Container_Image_Name>:tag
+		
+		
+				
+		Push the Images from Local Machine to Dockerhub Registry using docker cli.
+	
+			docker push <image_name>
+			
+			docker login -u loksaieta
+			
+			d3ewewwafwecawecawdcwdcasfewr3223e23ed32e213121212xE
+				
+			docker push <image_name>
+			
+			docker push loksaieta/myjavabuildimg1
+
+
+
+
+		docker build 		# Is used to create an Image from the scratch using Dockerfile
+		
+			docker build -t <new_Container_Image_Name>:tag .  # execute this command from the current dir for Dockerfile.
+			
+	
+Next :
+
+	Docker Build 
+	
+	Container Orchestration Tool 				
 			
