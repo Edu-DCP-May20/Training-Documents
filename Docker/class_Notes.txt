@@ -416,4 +416,118 @@ Next :
 	Docker Build 
 	
 	Container Orchestration Tool 				
+
+
+***********************
+Day 14 - 6th June 2024 
+***********************		
+
+	Docker Build Command 
+	
+	Dockerfile Instructions
+	
+	Container Orchestration Tool 
+		Overview of 
+			Docker Compose 
+			Docker Swarm 		
+
+	Kubernetes 
+	
+	
+	
+	Docker Build : Is used create an Docker Container Image using Dockerfile
+	
+	
+		docker build -t <new_Container_Image_Name> .				# Create New Image.
+		
+	Dockerfile
+	
+		- Compose of Instruction to create Layers of Container Image 
+		
+		
+		Instructions:
+		
+			FROM 		# Used to Identify the base Image 
+			RUN 		# Used to exucute any package manager related command 
+			COPY		# Used to copy the files from host volume to container volume 
+			ADD			# Used to copy the files from host volume as well from any web URL to container volume
+			CP 			# Used to copy the files within the container volume
+			ARG			# Used to pass the arguments to container 
+			EXPOSE		# Used to Expose/set the default container port 
+			ENV 		# Used to set the Environment Variables
+			WORKDIR		# Used to set the current working Directory 
+			CMD			# Used to set the start-up task to the container and it can be modified at run time
+			ENTRYPOINT	# Used to set the start-up task to the container but it cannot be modified at run time		
 			
+		Dockerfile 
+		
+		Eg. 1 :
+		
+		FROM debian
+		RUN apt-get update 
+		RUN apt-get install git -y
+		RUN apt-get install maven -y
+		
+		Eg. 2 :
+		
+		FROM tomcat:8.0
+		COPY ./target/mvn-hello-world.war /usr/local/tomcat/webapps
+		EXPOSE 8080
+		
+		
+		docker build -t loksaieta/myjavabuildimg:v1.0 .
+
+	Container Orchestration Tool 
+		Overview of 
+			
+		Docker Compose 			# used to run multiple containers as a service 
+			
+			Create a Service Definition :::
+			
+			service1 :
+				c1 :
+				c2 :
+				c3 :
+								
+			docker-compose up 
+
+			docker-compose down  
+			
+			Docker Compose file will written using *.yaml file format
+			
+			
+			docker-compose.io 
+			
+			
+		Docker Swarm :
+			Is a Container Orchestration Tool used only for Docker Containers 
+			It is used to ensure High-Availability of Containers
+			It allows to create replicas of Containers
+			
+			3 - tier application Architecture ::
+			
+				Front-End Layer 			C1,C1,C1 	
+					
+				Application Layer 			C2,C2,C2 
+				
+				BackEnd(DBase) Layer		C3,C3,C3 				
+
+
+  121  clear
+  122  docker ps
+  123  docker images
+  124  docker ps -a
+  125  ls
+  126  mdkir docker-contents
+  127  mkdir docker-contents
+  128  clear
+  129  cd docker-contents/
+  130  ls
+  131  vi Dockerfile
+  132  cat Dockerfile
+  133  docker images
+  134  docker build -t loksaieta/myjavabuildimg:v1.0 .
+  135  docker images
+  136  docker run -it loksaieta/myjavabuildimg:v1.0 bash
+  137  history
+
