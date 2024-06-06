@@ -1,0 +1,96 @@
+***********************
+Day 14 - 6th June 2024 
+***********************						
+
+		Kubernetes :::	
+	
+			Is a Open-Source Container Orchestration Tool used for any type of Containers 
+			It is used to ensure High-Availability of Containers/Pods
+			It allows to create replicas of Containers/Pods
+			It helps to autoscaling(Scale-up / Scale-Down the Containers/pods)
+			Perform Load balancing.			
+			
+			10 instances of Containers/pods 
+				to support 5000 users  ==> 50000 ?
+				
+				
+		Environments:
+		
+			dev
+			qa/uat		===>		prod (Production Servers - pods)
+		
+		Managed Services :
+			AWS : EKS - ECS, ECR 
+			Az  : AKS - ACS, ACR 
+			GCP : GKE - GCE, GCR
+		
+		
+		Working with Kubernetes : 	Admin, Developer, Security Admin
+		
+		Open-Source Kubernetes :::
+		
+			Installation and Configuration - Is a critical task 
+			Master and Node Configuration
+			
+			Kubernetes_Master Node 			# used to define and schedule the containers/pods to worknodes for deployment
+				Kubernetes_Worker_Node1		
+				Kubernetes_Worker_Node2
+				Kubernetes_Worker_Node3
+
+			Terminologies:
+				- Pods 				# Automic Unit of scheduling 
+				- Container 		# Executable unit of Container Images
+				- Images 			# Static file defines the properties of Container
+				- Kubeadm 			# Is a Command line utility used to Install/Configure/bootstrap Kubernetes
+				- Kubectl 			# Is a Command line utility used to Interact with Kubernetes Cluster
+				- kubelet 			# Is a Kubernetes Agent that runs on all Nodes to start/deploy pods
+				- Container Runtime ==> Container-D		
+									# Is a CRI - Container Runtime Interface using to interact wiht Container Registries and pull the images
+				- Cluster 	- Collection of WorkNodes 			
+				
+			Kubernetes Architecture :::
+
+			Components :
+				API Server 
+				ETCD 
+				Scheduler
+				Controller Manager 
+				
+				Kubelet
+				Kube-Proxy
+				CRI-Container-D
+			
+			Kubernetes_Master0
+				Kubernetes_Master1 (VM)	
+					Cluster1 :
+						Kubernetes_Worker_Node1	(VM)
+						Kubernetes_Worker_Node2 (VM)
+						Kubernetes_Worker_Node3 (VM)
+					Cluster2 :
+						Kubernetes_Worker_Node1	
+						Kubernetes_Worker_Node2
+						Kubernetes_Worker_Node3					
+					Cluster3 :
+						Kubernetes_Worker_Node1	
+						Kubernetes_Worker_Node2
+						Kubernetes_Worker_Node3		
+				Kubernetes_Master2 	
+					Cluster1 :
+						Kubernetes_Worker_Node1	
+						Kubernetes_Worker_Node2
+						Kubernetes_Worker_Node3
+					Cluster2 :
+						Kubernetes_Worker_Node1	
+						Kubernetes_Worker_Node2
+						Kubernetes_Worker_Node3					
+					Cluster3 :
+						Kubernetes_Worker_Node1	
+						Kubernetes_Worker_Node2
+						Kubernetes_Worker_Node3	
+					
+Next :::
+		
+		Installation and Configuration of Kubernetes
+		
+		Core Concept of Kubernetes
+					
