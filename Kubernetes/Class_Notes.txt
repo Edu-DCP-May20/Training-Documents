@@ -94,3 +94,103 @@ Next :::
 		
 		Core Concept of Kubernetes
 					
+***********************
+Day 15 - 7th June 2024 
+***********************	
+		
+		Installation and Configuration of Kubernetes
+		
+				Kubernetes_Master1 (VM)	
+						Kubernetes_Worker_Node1	(VM)
+						Kubernetes_Worker_Node2 (VM)
+						
+		Core Concept of Kubernetes:
+			Pods 
+				Pod Network
+			Controller Objects 
+				- Replication Controller 
+				- Replicaset
+				- Daemonset
+				- Deployment
+			Volumes	
+				hostpath
+				Config-Maps 
+				Secrets 
+				Persistant Volume
+				Persistant Volume Claim
+			Services
+				Nodeport 
+				ClusterIP
+				Load Balancer
+			Namespace 	
+			
+		
+		Installation and Configuration of Kubernetes
+		
+			Kubernetes_Master1 (VM)	
+					Kubernetes_Worker_Node1	(VM)
+					Kubernetes_Worker_Node2 (VM)
+
+			On Master & Worker Nodes :
+				1. Launch 3 Nodes 
+				2. Enable all the required ports in all the nodes -
+				3. Set unique hostname for reference 
+				4. Install CRI - Container-D
+					- Install the pre-requisites for Container-D 
+					- Download Container-D Package/Repositories
+					- Install Container-D
+					- Setup Container-D Config files 
+					- Restart Container-D
+				5. Install kubeadm,kubectl,kubelet 
+					- Download pre-requisites repositories
+					- Install kubeadm,kubectl,kubelet 
+				6. Config Swap
+				7. Enable kubelet agent
+				
+			Only on Master Node :			
+				- Initialize Master Node using kubeadm 
+				- Follow the given procedures during initialization
+				
+			Only on Worker Nodes :			
+				- kubeadm Join - to attach the worknodes to master
+			
+	- Create Pods & Working with Pods :::
+
+	Controller Objects 
+		- Replication Controller & Replicaset
+			- Both are used to create replicas of pods
+			- Both are used to scale-up or scale-down the pods instances
+			- Replication Controller used Equality based operator
+					envi = dev,uq,uat
+			- Replicaset used Set based operator
+					envi : {dev,qa,uat}
+			
+		
+		- Daemonset
+		- Deployment
+		
+		
+Summary :
+
+		Installation and Configuration of Kubernetes:
+		Core Concept of Kubernetes:
+			Pods 
+				Pod Network
+			Controller Objects 
+				- Replication Controller 
+
+Next :
+			Controller Objects 
+				- Daemonset
+				- Deployment
+			Volumes	
+				hostpath
+				Config-Maps 
+				Secrets 
+				Persistant Volume
+				Persistant Volume Claim
+			Services
+				Nodeport 
+				ClusterIP
+				Load Balancer
+			Namespace 	
