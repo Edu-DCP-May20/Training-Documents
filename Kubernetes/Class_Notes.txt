@@ -194,3 +194,140 @@ Next :
 				ClusterIP
 				Load Balancer
 			Namespace 	
+
+
+***********************
+Day 16 - 10th June 2024 
+***********************	
+
+		Controller Objects 
+			- Daemonset
+			- Deployment
+		Volumes	
+			hostpath
+			Config-Maps 
+			Secrets 
+			Persistant Volume
+			Persistant Volume Claim
+		Services
+			Nodeport 
+			ClusterIP
+			Load Balancer
+		Namespace
+	
+		Controller Objects 
+			- Daemonset
+			- Deployment	
+
+
+
+		- Daemonset ::
+		
+			- Is used to deploy a copy of pod in all the available Nodes.
+		
+		
+		K_Master 
+			KPWorkerNode1,2,3,4,5,6,7,.....100
+		
+		
+		- Deployment Controller Object :
+			
+			- Ensure that the specific number of pods are up and running!
+			- Used to Create Replicas of Pods and deploy to Kubernetes Worker Nodes 
+			- It will automatically create replicaset
+			- Perform Scale-up & Scale-Down
+			- Upgrade without any downtime 
+			- Down-grade / revert / roll-back / undo deployments without and downtime
+			- Rolling-Update - Deployment Strategy
+			
+		Application - mywebapp.war_v1.0		==> mywebappimg:v1.0 ==> push to Dockerhub
+		
+		Using Kubernetes we try to pull the images to kubernetes cluster and deploy as pod.
+		
+		Replicas 
+		
+			pod_instance1  ==> mywebappimg:v1.0
+			pod_instance2  ==> mywebappimg:v1.0			
+			pod_instance3  ==> mywebappimg:v1.0		
+		
+		During Upgrade : using Rolling-Update Strategy :
+		
+		Application - mywebapp.war_v1.1		==> mywebappimg:v1.1 ==> push to Dockerhub
+		
+		Replicas 
+																			   undo 
+			pod_instance1  ==> mywebappimg:v1.0			==> mywebappimg:v1.1 	==> mywebappimg:v1.0	
+			pod_instance2  ==> mywebappimg:v1.0			==> mywebappimg:v1.1 		
+			pod_instance3  ==> mywebappimg:v1.0			==> mywebappimg:v1.1 
+		
+		mywebappimg:v1.0		- server1 
+		
+		mywebappimg:v1.1		- server1 
+		
+		10000 users --> 100 replicas of pods 
+		
+		30000 users --> 85% limit
+	
+		www.google.com ==> Prod_Environment 
+						Prod_Server1,2,3,4,5
+		
+	Volumes				# Used to maintain the persistant data across the pods / cluster
+	
+		hostpath		# Docker Volume 
+		Config-Maps 
+		Secrets 
+		
+		Persistant Volume
+		Persistant Volume Claim		
+				
+	Data to be maintained in Pods 
+			
+		Config-Maps 	# Used to maintain Non-Sensible data
+						# Will expose the data outside the pod
+						
+		Secrets 		# Used to maintain Sensitive data
+						# Will not expose the data outside the pod
+			
+			
+	Services ::
+	
+		- 3-tier application :
+		
+			Front-End Pods 
+			
+			App_Layer Pods 
+			
+			BackEnd Pods 
+			
+			
+		NodePort 	- created at the service level 
+		
+		ClusterIP	- Created within the cluster level 
+		
+		LoadBalancer - created at the application level 
+		
+		
+		www.gmail.com 			- base url 		--> LoadBalancer 
+		
+		inbox 		==> www.gmail.com/inbox			==> path based routing 
+		sent		==> www.gmail.com/sent 
+		trash 
+		
+		path based routing
+		
+		host based routing 
+		
+		www.google.com 
+		
+		www.translate.google.com 		===> host based routing 
+		www.drive.google.com 
+		
+Next ::
+
+	Namespace
+	
+	Terraform
+	
+	Prometheus/Grafana
+	
+	Demo - CICD 
