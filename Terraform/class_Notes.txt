@@ -1,0 +1,106 @@
+***********************
+Day 17 - 11th June 2024 
+***********************	
+
+	Fundamentals of Terraform :::
+
+		IAC Tool - Used to provision the Infra-Structure
+		
+			Provioning/Creating 	--> Terraform / Cloudformation / ARM 
+			
+			Configure the Server 	--> Ansible / Chef / Puppet / 
+		
+		AWS - EC2 Instance(VM)
+		Az - Virtual Machine 
+		
+		Working Model / Architecture of Terraform
+		
+			- Identify the Infra-Structure / Target Platform
+			- Write the Terraform Script
+			- terraform init - Initialize Terraform Provider 
+			- terraform plan - Preview the terraform script 
+			- terraform apply - apply the actual changes in target platform.
+		
+		Using Terraform ::
+		
+			==> Create/ADD the Resource   		+
+			
+			==> Delete/Destroy the Resource 	- 
+			
+			==> Update/Change the Resource 		~
+			
+			
+		Install Terraform  		#	https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+			
+			Install Terraform on Local Windows Machine 
+			
+				- Manual installation procedure 
+				- Download Terraform AMD64 - zip. package 
+				- Extract the zip file 
+				- Create Environmental variable
+				
+			Install Visual Stdio Code 			# https://code.visualstudio.com/download
+				- Install Terraform Extension for Visual Studio Code.
+				- Create Project 
+				- Write the Terraform Scripts  *.tf
+			
+		
+		Write Terraform Scripts ????
+		
+		Define Provider :::
+		
+			aws provider name
+			
+			region 
+			
+			AWS_Access_Key		
+			
+			AWS_Secret_Key 	
+		
+		
+	Terraform State File :
+	
+		- Is used to maintain the current status of the resource.
+		- It prevent duplicate resource definitions.
+		
+		Maintain the Terraform State File!
+		
+	Use Cases :::
+
+	CICD Pipeline :
+	
+		SCM_Checkout --> Build --> Deploy_to_QA	--> Automate_QA_Testing 
+		
+	Scenario 1 ::
+	
+		Pipeline1 :
+			SCM_Checkout --> Provision the QA_Server(Terraform) --> Configure the QA_Server(Ansible) 
+			
+		Pipeline2 :
+			SCM_Checkout --> Build --> Deploy_to_New_QA	--> Automate_QA_Testing 
+
+	Scenario 2 ::
+	
+	Pipeline1 :	
+		SCM_Checkout --> App_Build --> Provision the QA_Server(Terraform) --> Configure the QA_Server(Ansible) --> Deploy_to_New_QA	--> Automate_QA_Testing 
+		
+																																				|
+																																				|
+																																		Email to DEV TEAM
+																																		
+	Scenario 3 ::
+	
+	Pipeline1 :	
+		SCM_Checkout --> App_Build --> Provision the QA_Server(Terraform) --> Configure the QA_Server(Ansible) --> Deploy_to_New_QA	--> Automate_QA_Testing --> Email Nofication --> Delete QA_Server
+		
+		
+		gitOps 
+				
+				
+	waterfall --> Agile --> DevOps --> DevSecOps --> SRE --> gitOps --> AIOps --> MLOps,.......
+
+
+Next :
+		Monitoring Tool : Prometheus/Grafana
+		
+		Demo - CICD - Project.
