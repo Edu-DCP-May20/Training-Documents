@@ -331,3 +331,54 @@ Next ::
 	Prometheus/Grafana
 	
 	Demo - CICD 
+
+
+
+***********************
+Day 17 - 11th June 2024 
+***********************	
+
+	Namespace 
+	
+	Fundamentals of Terraform and Prometheus/Grafana
+	
+	Demo CICD - with Kubernetes-Dashboard
+	
+	
+	Environments :
+	
+	Non-Prod Kubernetes Cluster				Prod Kubernetes Cluster
+	
+		DEV 									PROD 
+		
+		QA 
+		
+		UAT 								
+		
+	Kubernetes_Master
+		Kubernetes_Worker_Node1  ubuntu
+		Kubernetes_Worker_Node2  centos
+		Kubernetes_Worker_Node3
+		Kubernetes_Worker_Node4
+		
+	Namespace ::
+	
+		- It is a logical partitioning of Cluster.
+		
+	User Access 
+		
+		API Server :::
+		
+		RBAC - Role Based Access Control 
+		
+	Package Manager :::
+	
+		apt - in a node 
+		yum 
+		
+		helm package manager 
+		
+		Monitor ::
+		
+			Using Kubernetes-Dashboard 
+			
