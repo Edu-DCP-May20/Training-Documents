@@ -640,7 +640,9 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
-	
+#######################################################################
+
+
 pipeline {
 
     agent { label 'slave1' }
@@ -666,9 +668,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
 				sh 'docker version'
-				sh "docker build -t loksaieta/bankapp-eta-app:${BUILD_NUMBER} ."
+				sh "docker build -t loksaieta/loksai-eta-app:${BUILD_NUMBER} ."
 				sh 'docker image list'
-				sh "docker tag loksaieta/bankapp-eta-app:${BUILD_NUMBER} loksaieta/bankapp-eta-app:latest"
+				sh "docker tag loksaieta/loksai-eta-app:${BUILD_NUMBER} loksaieta/loksai-eta-app:latest"
             }
         }
 		stage('Login2DockerHub') {
@@ -679,7 +681,7 @@ pipeline {
 		}
 		stage('Publish_to_Docker_Registry') {
 			steps {
-				sh "docker push loksaieta/bankapp-eta-app:latest"
+				sh "docker push loksaieta/loksai-eta-app:latest"
 			}
 		}
 		stage('Deploy to Kubernetes') {
