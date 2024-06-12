@@ -1,0 +1,53 @@
+***********************
+Day 18 - 12th June 2024 
+***********************	
+
+	Monitoring Tool : Prometheus/Grafana
+	
+			- Continuous Monitoring :
+			
+			Production Support 
+			
+			Production Monitoring Team 
+				
+			- This to Monitor the Target Environments:
+			
+				- Infra-Structure Monitoring 
+				
+					Tools : Prometheus/Grafana/Dynatrace/Splunk
+					
+					CPU/Memory utilization
+					
+				- Application Monitor 
+				
+					Tools : App Dynamics/ Datadog
+						
+						
+					Jenkins_Master 
+					
+						Jenkins_Slave_Node1,2,3,4
+						
+					Kubernetes_Master 
+						Kubernetes_Worker_Node1,2,3,4,5
+						
+						CPU / Memory 
+						
+						Prometheus -- --> 80% -- alert thru email
+						
+						DevOps --> CICD workflow 
+						
+							git,jenkins,docker,kubernetes,ansible,terraform
+							
+							Prometheus - Monitoring Tool 
+
+							Grafana - Visualization Tool
+							
+							Prometheus uses Time Series Database 
+						
+					Install Prometheus/Grafana :::
+					
+					
+					Access prometheus Dashboard :
+					
+					PromQL	==> Query Language for Prometheus
+					
